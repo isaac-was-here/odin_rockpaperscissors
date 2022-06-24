@@ -19,11 +19,23 @@
                 } else {
                     return "Scissors";
                 }
-
             }
 
-            function startGame(playerSelection, computerSelection) {
-                let input = prompt("Rock, Paper, Scissors?");
+            function startGame() {
+                let playerSelection = prompt("Rock, Paper, Scissors?");
+                let computerSelection = computerPlay();
+                
+                if(playerSelection == computerSelection) {
+                    alert("It's a tie!");
+                } else if(playerSelection == "Rock" && computerSelection == "Scissors") {
+                    alert("Player wins!");
+                } else if(playerSelection == "Paper" && computerSelection == "Rock") {
+                    alert("Player wins!");
+                } else if(playerSelection == "Scissors" && computerSelection == "Paper") {
+                    alert("Player wins!");
+                } else {
+                    alert("Computer wins!");
+                }
             }
 
         </script>
