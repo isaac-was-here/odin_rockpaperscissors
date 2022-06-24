@@ -26,15 +26,13 @@
                 let computerSelection = computerPlay();
                 
                 if(playerSelection == computerSelection) {
-                    alert("It's a tie!");
-                } else if(playerSelection == "Rock" && computerSelection == "Scissors") {
-                    alert("Player wins!");
-                } else if(playerSelection == "Paper" && computerSelection == "Rock") {
-                    alert("Player wins!");
-                } else if(playerSelection == "Scissors" && computerSelection == "Paper") {
-                    alert("Player wins!");
+                    alert("It's a tie! You both chose " + playerSelection);
+                } else if((playerSelection == "Rock" && computerSelection == "Scissors") || 
+                            (playerSelection == "Paper" && computerSelection == "Rock") || 
+                            (playerSelection == "Scissors" && computerSelection == "Paper")) {
+                    alert("Player wins! " + playerSelection + " beats " + computerSelection);
                 } else {
-                    alert("Computer wins!");
+                    alert("Computer wins! " + computerSelection + " beats " + playerSelection);
                 }
             }
 
