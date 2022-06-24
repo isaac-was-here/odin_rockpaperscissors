@@ -25,15 +25,24 @@
                 let playerSelection = prompt("Rock, Paper, Scissors?");
                 let computerSelection = computerPlay();
                 
+                alert(evaluate(playerSelection, computerSelection));
+            }
+
+            function evaluate(playerSelection, computerSelection) {
+                playerSelection = playerSelection.toUpperCase();
+                computerSelection = computerSelection.toUpperCase();
+                let message;
+
                 if(playerSelection == computerSelection) {
-                    alert("It's a tie! You both chose " + playerSelection);
+                    message = "It's a tie! You both chose " + playerSelection;
                 } else if((playerSelection == "Rock" && computerSelection == "Scissors") || 
                             (playerSelection == "Paper" && computerSelection == "Rock") || 
                             (playerSelection == "Scissors" && computerSelection == "Paper")) {
-                    alert("Player wins! " + playerSelection + " beats " + computerSelection);
+                    message = "Player wins! " + playerSelection + " beats " + computerSelection;
                 } else {
-                    alert("Computer wins! " + computerSelection + " beats " + playerSelection);
+                    message = "Computer wins! " + computerSelection + " beats " + playerSelection;
                 }
+                return message;
             }
 
         </script>
