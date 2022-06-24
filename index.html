@@ -9,6 +9,8 @@
             /*  rock = 1
                 paper = 2
                 scissors = 3 */
+            let playerScore = 0;
+            let compScore = 0;
 
             function computerPlay() {
                 let randomNum = Math.floor((Math.random() * 3) + 1);
@@ -21,11 +23,10 @@
                 }
             }
 
-            function startGame() {
+            function startRound() {
                 let playerSelection = prompt("Rock, Paper, Scissors?");
                 let computerSelection = computerPlay();
-                
-                alert(evaluate(playerSelection, computerSelection));
+                console.log(evaluate(playerSelection, computerSelection));
             }
 
             function evaluate(playerSelection, computerSelection) {
@@ -34,15 +35,31 @@
                 let message;
 
                 if(playerSelection == computerSelection) {
-                    message = "It's a tie! You both chose " + playerSelection;
-                } else if((playerSelection == "Rock" && computerSelection == "Scissors") || 
-                            (playerSelection == "Paper" && computerSelection == "Rock") || 
-                            (playerSelection == "Scissors" && computerSelection == "Paper")) {
-                    message = "Player wins! " + playerSelection + " beats " + computerSelection;
+                    message = "Tie round! You both chose " + playerSelection;
+                } else if((playerSelection == "ROCK" && computerSelection == "SCISSORS") || 
+                            (playerSelection == "PAPER" && computerSelection == "ROCK") || 
+                            (playerSelection == "SCISSORS" && computerSelection == "PAPER")) {
+                    message = "Player wins round! " + playerSelection + " beats " + computerSelection;
+                    playerScore++;
                 } else {
-                    message = "Computer wins! " + computerSelection + " beats " + playerSelection;
+                    message = "Computer wins round! " + computerSelection + " beats " + playerSelection;
+                    compScore++;
                 }
                 return message;
+            }
+
+            function startGame() {
+                for(let i = 0; i < 5; i++) {
+                    startRound();
+                    console.log("Player: " + playerScore + " Computer: " + compScore);
+                }
+                if(playerScore == compScore) {
+                    console.log("Tie Game!");
+                } else if(playerScore > compScore) {
+                    console.log("Player Victory!");
+                } else {
+                    console.log("Computer Victory!");
+                }
             }
 
         </script>
