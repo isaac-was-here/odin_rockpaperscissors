@@ -5,6 +5,27 @@
         <title>Rock, Paper, Scissors</title>
     </head>
     <body>
+        <script>
+            /*  rock = 1
+                paper = 2
+                scissors = 3 */
 
+            function computerPlay() {
+                let randomNum = Math.floor((Math.random() * 3) + 1);
+                if(randomNum == 1) {
+                    return "Rock";
+                } else if(randomNum == 2) {
+                    return "Paper";
+                } else {
+                    return "Scissors";
+                }
+
+            }
+
+            function startGame(playerSelection, computerSelection) {
+                let input = prompt("Rock, Paper, Scissors?");
+            }
+
+        </script>
     </body>
 </html>
