@@ -3,65 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock, Paper, Scissors</title>
+        <script src="js-file.js" defer></script>
     </head>
     <body>
-        <script>
-            /*  rock = 1
-                paper = 2
-                scissors = 3 */
-            let playerScore = 0;
-            let compScore = 0;
-
-            function computerPlay() {
-                let randomNum = Math.floor((Math.random() * 3) + 1);
-                if(randomNum == 1) {
-                    return "Rock";
-                } else if(randomNum == 2) {
-                    return "Paper";
-                } else {
-                    return "Scissors";
-                }
-            }
-
-            function startRound() {
-                let playerSelection = prompt("Rock, Paper, Scissors?");
-                let computerSelection = computerPlay();
-                console.log(evaluate(playerSelection, computerSelection));
-            }
-
-            function evaluate(playerSelection, computerSelection) {
-                playerSelection = playerSelection.toUpperCase();
-                computerSelection = computerSelection.toUpperCase();
-                let message;
-
-                if(playerSelection == computerSelection) {
-                    message = "Tie round! You both chose " + playerSelection;
-                } else if((playerSelection == "ROCK" && computerSelection == "SCISSORS") || 
-                            (playerSelection == "PAPER" && computerSelection == "ROCK") || 
-                            (playerSelection == "SCISSORS" && computerSelection == "PAPER")) {
-                    message = "Player wins round! " + playerSelection + " beats " + computerSelection;
-                    playerScore++;
-                } else {
-                    message = "Computer wins round! " + computerSelection + " beats " + playerSelection;
-                    compScore++;
-                }
-                return message;
-            }
-
-            function startGame() {
-                for(let i = 0; i < 5; i++) {
-                    startRound();
-                    console.log("Player: " + playerScore + " Computer: " + compScore);
-                }
-                if(playerScore == compScore) {
-                    console.log("Tie Game!");
-                } else if(playerScore > compScore) {
-                    console.log("Player Victory!");
-                } else {
-                    console.log("Computer Victory!");
-                }
-            }
-
-        </script>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        <div id="score">Result</div>
     </body>
 </html>
