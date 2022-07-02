@@ -2,23 +2,25 @@ body {
     margin: 0;
     background-color:rgb(29, 30, 31);
     color: white;
+    font-size: large;
 }
 #header {
     display: flex;
     justify-content: space-around;
 }
 #main {
-    height: 100vh;
+    margin: 45px 0px;
+    height: min-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
 }
 
-/* #top, #bot, #mid, #header, #main {
+#top, #bot, #mid, #header, #main {
     border: solid red 2px;
-} */
+}
 
 #top, #bot {
     display: flex;
@@ -34,6 +36,7 @@ button {
 img {
     filter: invert(100%);
     pointer-events: none;
+    height: 200px;
 }
 
 .glow {
