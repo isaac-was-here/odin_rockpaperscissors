@@ -18,9 +18,9 @@ body {
     gap: 50px;
 }
 
-#top, #bot, #mid, #header, #main {
+/* #top, #bot, #mid, #header, #main {
     border: solid red 2px;
-}
+} */
 
 #top, #bot {
     display: flex;
