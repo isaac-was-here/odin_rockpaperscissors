@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    background-color:rgb(29, 30, 31);
+    color: white;
+}
+#header {
+    display: flex;
+    justify-content: space-around;
+}
+#main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+/* #top, #bot, #mid, #header, #main {
+    border: solid red 2px;
+} */
+
+#top, #bot {
+    display: flex;
+    gap: 100px;
+}
+
+button {
+    width: min-content;
+    background-color: transparent;
+    border: transparent;
+}
+
+img {
+    filter: invert(100%);
+    pointer-events: none;
+}
+
+.glow {
+    box-shadow: 0 0 20px rgb(49, 190, 255);
+    transform: scale(1.25);
+}
+
+
